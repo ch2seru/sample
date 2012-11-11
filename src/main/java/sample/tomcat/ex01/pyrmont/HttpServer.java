@@ -14,11 +14,11 @@ import java.net.Socket;
  * Date: 12. 8. 5
  */
 public class HttpServer {
-    //WEB_ROOT  �꾨줈�앺듃 寃쎈줈 :System.getProperty("user.dir")
+    //WEB_ROOT 프로젝트 경로 :System.getProperty("user.dir")
     public static final String WEB_ROOT = System.getProperty("user.dir") + File.separator + "src/main/webroot";
-    //醫낅즺紐낅졊
+  //종료명령
     private static final String SHUTDOWN_COMMAND ="/SHUTDOWN";
-    //醫낅즺�щ�
+    //종료여부
     private boolean shutdown = false;
 
     public static void main(String[] args){
@@ -53,10 +53,10 @@ public class HttpServer {
                 response.setRequest(request);
                 response.sendStaticResource();
 
-                //�뚯폆 �リ린
+                //소켓 닫기
                 socket.close();
 
-                //醫낅즺 紐낅졊�댁뿀�붿�瑜��뺤씤
+                //종료 명령이었는지를 확인
                 String uri ="";
                 if(request.getUri() !=null)  uri =  request.getUri();
                 shutdown = uri.equals(SHUTDOWN_COMMAND);

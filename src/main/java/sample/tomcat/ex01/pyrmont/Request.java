@@ -17,7 +17,7 @@ public class Request {
     }
 
     public void parse(){
-        //�뚯폆�쇰줈遺�꽣 �쇰젴��臾몄옄�ㅼ쓣 �쎌쓬
+    	//소켓으로부터 일련의 문자들을 읽음
         StringBuffer request = new StringBuffer(2048);
         int i;
         byte[] buffer = new byte[2048];

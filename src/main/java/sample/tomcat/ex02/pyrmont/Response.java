@@ -4,6 +4,8 @@ package sample.tomcat.ex02.pyrmont;
 import java.io.*;
 import java.util.Locale;
 
+import javax.servlet.ServletResponse;
+
 /**
  * Subject :
  * User: ch2seru
