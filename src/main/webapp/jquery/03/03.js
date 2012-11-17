@@ -369,7 +369,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$('#switcher').bind('click.collapse',function(event){
-		if(!$(evnet.target).is('button')){
+		if(!$(event.target).is('button')){
 			$('#switcher button').toggleClass('hidden');
 		}
 		
