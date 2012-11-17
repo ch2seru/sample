@@ -231,8 +231,9 @@ $(document).ready(function() {
 	
 });
 */
+
 /*3.15*/
-$(document).ready(function() {
+/*$(document).ready(function() {
 	$('#switcher h3').hover(function(){
 		$(this).addClass('hover');
 	},function(){
@@ -246,24 +247,6 @@ $(document).ready(function() {
 	});
 });
 
-
-/*$(document).ready(function() {
-	  $('#switcher-default').addClass('selected');
-
-	  $('#switcher').click(function(event) {
-	    if ($(event.target).is('button')) {
-	      var bodyClass = event.target.id.split('-')[1];
-
-	      $('body').removeClass().addClass(bodyClass);
-
-	      $('#switcher button').removeClass('selected');
-	      $(event.target).addClass('selected');
-	      event.stopPropagation();
-	    }
-	  });
-	});*/
-
-
 $(document).ready(function() {
 	$('#switcher-default').addClass('selected');
 	
@@ -275,10 +258,143 @@ $(document).ready(function() {
 		$('body').removeClass().addClass(bodyClass);
 		$('#switcher button').removeClass('selected');
 		$(this).addClass('selected');
-		//event.stopPropagation();
+		event.stopPropagation();
 	});
 	
 });
+*/
+/*3.16*/
+/*$(document).ready(function() {
+  $('#switcher').hover(function() {
+    $(this).addClass('hover');
+  }, function() {
+    $(this).removeClass('hover');
+  });
+});
+
+$(document).ready(function() {
+  $('#switcher').click(function(event) {
+    if (!$(event.target).is('button')) {
+      $('#switcher button').toggleClass('hidden');
+    }
+  });
+});
+
+$(document).ready(function() {
+  $('#switcher-default').addClass('selected');
+
+  $('#switcher').click(function(event) {
+    if ($(event.target).is('button')) {
+      var bodyClass = event.target.id.split('-')[1];
+
+      $('body').removeClass().addClass(bodyClass);
+
+      $('#switcher button').removeClass('selected');
+      $(event.target).addClass('selected');
+    }
+  });
+});
+*/
+
+/*3.17*/
+/*$(document).ready(function() {
+  $('#switcher').hover(function() {
+    $(this).addClass('hover');
+  }, function() {
+    $(this).removeClass('hover');
+  });
+});
+
+$(document).ready(function() {
+  $('#switcher-default').addClass('selected');
+
+  $('#switcher').click(function(event) {
+    if ($(event.target).is('button')) {
+      var bodyClass = event.target.id.split('-')[1];
+
+      $('body').removeClass().addClass(bodyClass);
+
+      $('#switcher button').removeClass('selected');
+      $(event.target).addClass('selected');
+    } else {
+      $('#switcher button').toggleClass('hidden');
+    }
+  });
+});*/
+
+/*3.18*/
+/*$(document).ready(function() {
+  $('#switcher').hover(function() {
+    $(this).addClass('hover');
+  }, function() {
+    $(this).removeClass('hover');
+  });
+});
+
+$(document).ready(function() {
+	$('#switcher').click(function(event){
+		if(!$(event.target).is('button')){
+			$('#switcher button').toggleClass('hidden');
+		}
+	});
+	
+	$('#switcher-large, #switcher-narrow').click(function(event){
+		$('#switcher').unbind('click');
+	}); 
+});
+
+$(document).ready(function() {
+  $('#switcher-default').addClass('selected');
+
+  $('#switcher').click(function(event) {
+    if ($(event.target).is('button')) {
+      var bodyClass = event.target.id.split('-')[1];
+
+      $('body').removeClass().addClass(bodyClass);
+
+      $('#switcher button').removeClass('selected');
+      $(event.target).addClass('selected');
+    }
+  });
+});*/
+
+/*3.19*/
+$(document).ready(function() {
+  $('#switcher').hover(function() {
+    $(this).addClass('hover');
+  }, function() {
+    $(this).removeClass('hover');
+  });
+});
+
+$(document).ready(function() {
+	$('#switcher').bind('click.collapse',function(event){
+		if(!$(evnet.target).is('button')){
+			$('#switcher button').toggleClass('hidden');
+		}
+		
+	});
+	
+	$('#switcher-large, #switcher-narrow').click(function(event){
+		$('#switcher').unbind('click.collapse');
+	}); 
+});
+
+$(document).ready(function() {
+  $('#switcher-default').addClass('selected');
+
+  $('#switcher').click(function(event) {
+    if ($(event.target).is('button')) {
+      var bodyClass = event.target.id.split('-')[1];
+
+      $('body').removeClass().addClass(bodyClass);
+
+      $('#switcher button').removeClass('selected');
+      $(event.target).addClass('selected');
+    }
+  });
+});
+
 
 
 
